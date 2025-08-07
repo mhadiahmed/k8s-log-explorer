@@ -21,7 +21,7 @@ A comprehensive tool for exploring and analyzing Kubernetes pod logs with advanc
 #### Option 1: Automated Installation
 ```bash
 # Clone and install
-git clone <your-repo> k8s-log-explorer
+git clone https://github.com/mhadiahmed/k8s-log-explorer k8s-log-explorer
 cd k8s-log-explorer
 ./scripts/install.sh
 ```
