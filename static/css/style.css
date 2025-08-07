@@ -1,0 +1,220 @@
+/* Custom styles for Kubernetes Log Explorer */
+
+.log-container {
+    height: 600px;
+    overflow-y: auto;
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    font-family: 'Courier New', monospace;
+}
+
+.log-line {
+    padding: 2px 8px;
+    border-bottom: 1px solid #333;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.log-line:hover {
+    background-color: #2a2a2a;
+}
+
+.log-line-number {
+    color: #666;
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+    padding-right: 10px;
+    border-right: 1px solid #444;
+    margin-right: 10px;
+}
+
+.log-content {
+    color: #e0e0e0;
+}
+
+/* Log level colors */
+.log-error {
+    background-color: #3a1a1a;
+    border-left: 3px solid #dc3545;
+}
+
+.log-warn {
+    background-color: #3a3a1a;
+    border-left: 3px solid #ffc107;
+}
+
+.log-info {
+    background-color: #1a3a1a;
+    border-left: 3px solid #28a745;
+}
+
+.log-debug {
+    background-color: #1a1a3a;
+    border-left: 3px solid #007bff;
+}
+
+/* Pod list styles */
+.pod-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.pod-item:hover {
+    background-color: #495057;
+}
+
+.pod-item.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.pod-status {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.pod-status.running {
+    background-color: #28a745;
+    color: white;
+}
+
+.pod-status.pending {
+    background-color: #ffc107;
+    color: black;
+}
+
+.pod-status.failed {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Search result highlighting */
+.search-highlight {
+    background-color: #ffc107;
+    color: #000;
+    padding: 1px 3px;
+    border-radius: 2px;
+}
+
+.search-match-block {
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    margin: 10px 0;
+    background-color: #1a2332;
+}
+
+.search-match-header {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.search-match-content {
+    padding: 10px;
+}
+
+/* Scrollbar styling */
+.log-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.log-container::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+.log-container::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.log-container::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Auto-follow indicator */
+.following-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #28a745;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 100;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Custom card styles */
+.card {
+    border: 1px solid #444;
+}
+
+.card-header {
+    border-bottom: 1px solid #444;
+}
+
+/* Modal dark theme adjustments */
+.modal-content.bg-dark {
+    border: 1px solid #444;
+}
+
+.modal-header {
+    border-bottom: 1px solid #444;
+}
+
+.modal-footer {
+    border-top: 1px solid #444;
+}
+
+/* Form controls dark theme */
+.form-control, .form-select {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #2a2a2a;
+    border-color: #007bff;
+    color: #e0e0e0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .log-container {
+        height: 400px;
+    }
+    
+    .log-line {
+        font-size: 11px;
+    }
+    
+    .log-line-number {
+        width: 40px;
+    }
+}

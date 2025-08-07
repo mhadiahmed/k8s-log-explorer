@@ -1,0 +1,25 @@
+kubernetes:
+  config_file: ~/.kube/config  # Set to null for in-cluster config
+  namespace: default           # Default namespace (can be overridden with -n flag)
+
+logging:
+  level: INFO
+  context_lines: 3
+  max_lines: 1000
+
+web:
+  host: 0.0.0.0
+  port: 5000
+  debug: false
+
+search:
+  java_error_patterns:
+    - "Exception"
+    - "Error"
+    - "Caused by"
+    - "at\\s+[a-zA-Z0-9_$]+\\.[a-zA-Z0-9_$]+\\("
+  
+  context_patterns:
+    - "\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}"  # timestamp
+    - "\\[.*?\\]"  # log levels in brackets
+    - "ERROR|WARN|INFO|DEBUG|TRACE"  # log levels
